@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Result page</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+    <link href="/static/sticky-footer.css" rel="stylesheet">
+  </head>
+
+<body>
+
+
+{#输入：{'data': ((event_name, category, round, ranking, id, performance), ...)}#}
+{#列出rank,id,performance#}
+{#输出：无#}
+    <div class="container">
+
+      <div class="page-header">
+        <h2>
+            {% for i in event %}
+                {{ i }}
+            {% endfor %}
+        </h2>
+      </div>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Ranking</th><th>ID</th><th>Performance</th>
+            </tr>
+            </thead>
+            {% for player in data %}
+                <tr>
+                    {% for i in player %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+<script src="/static/bootstrap-3.4.1-dist/js/jQuery.min.js"></script>
+<script src="/static/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

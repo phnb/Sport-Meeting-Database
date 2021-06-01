@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Org_log</title>
+</head>
+<body>
+<h>Organizer Log In</h>
+
+
+<form method="POST" action="/check">
+    {% csrf_token %}
+    password<input type="password", name="password">
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

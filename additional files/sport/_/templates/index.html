@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>3170 project</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+      <link href="/static/jumbotron.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">3170 project</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+          <form method="POST" action="/register">
+              {% csrf_token %}
+              <input type="submit" value="register now" class="btn btn-success">
+          </form>
+          </div>
+
+            <div class="navbar-form navbar-right">
+                <form method="POST" action="/player">
+                    {% csrf_token %}
+                    <input type="submit" value="sign up" class="btn btn-success">
+                </form>
+            </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>University Sport Event</h1>
+        <p>Since the playground of LGU will be put into use soon, our group would like to build a database for monitoring a particular sports meeting</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="treepage-bg" id="treepagebg">
+      <div class="row">
+
+        <div class="col-md-4">
+          <h2>Search Result</h2>
+          <p>Here you can search the event results</p>
+          <form method = "POST" action = "/event_result" class="form-inline">
+           {% csrf_token %}
+          <div class="form-group">
+              <select name="event_name" class = "form-control" required>
+                  <option value="100m">100m</option>
+                  <option value="400m">400m</option>
+                  <option value="800m">800m</option>
+                  <option value="highjump">highjump</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <select name="category" class = "form-control" required>
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+          </div>
+           <div class="form-group">
+              <select name="round" class = "form-control" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                  <option value="3">3</option>
+              </select>
+           </div>
+           <input type="submit"class="btn btn-default" value="search&raquo;">
+          </form>
+        </div>
+
+         <div class="col-md-4">
+            <h2>College Ranking</h2>
+            <p>Here is the rank of every college</p>
+            <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Ranking</th><th>College</th><th>Score</th>
+            </tr>
+            </thead>
+                {% for player in data %}
+                    <tr>
+                        {% for i in player %}
+                            <td>{{ i }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+         </div>
+
+       <div class="col-md-4">
+          <h2>Organizing Commitee</h2>
+          <p>If you're a member of the organizing commitee, please enter the password to manage the system</p>
+            <form method="POST" action="/check" class="form-inline">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="password", name="password" class = "form-control" placeholder="passward">
+                </div>
+                <input type="submit"class="btn btn-default" value="sign in&raquo;">
+            </form>
+          </div>
+       </div>
+
+       <footer class="sign">
+         <p>&copy; 2021 3170 Brotherhood</p>
+       </footer>
+      <div/>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/bootstrap-3.4.1-dist/js/jQuery.min.js"></script>
+    <script src="/static/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

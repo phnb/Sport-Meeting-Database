@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Type in event result</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+    <link href="/static/sticky-footer.css" rel="stylesheet">
+  </head>
+
+<body>
+
+  <div class="container">
+
+      <div class="page-header">
+        <h2>Enter the Results of Event</h2>
+      </div>
+
+      <form method="POST" action="/update_result">
+          {% csrf_token %}
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Id</th><th>Name</th><th>Performance</th><th>Ranking</th>
+              </tr>
+            </thead>
+                {#    这里有个for循环#}
+                {%for player in data%}
+                    <tr>
+                        {%for i in player%}
+                            <td>{{i}}</td>
+                        {%endfor%}
+                    <td>
+                        <input type="number", name="performance" class = "form-control">
+                    </td>
+                        <td>
+                            <input type="number", name="ranking" class = "form-control">
+                        </td>
+                    </tr>
+                {%endfor%}
+          </table>
+      <div class="form-group">
+          <div class="page-header">
+            <input type="submit" value="Commit" class="btn btn-primary">
+          </div>
+      </div>
+      </form>
+  </div>
+
+
+<script src="/static/bootstrap-3.4.1-dist/js/jQuery.min.js"></script>
+<script src="/static/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

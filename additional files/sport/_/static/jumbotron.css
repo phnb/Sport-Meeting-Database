@@ -1,0 +1,16 @@
+.treepage-bg{
+    position: absolute;
+    height: 50%;
+    width: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#treepagebg{
+    background-image: url("img3.png");
+}
+
+.sign{
+    margin-top: 200px
+}

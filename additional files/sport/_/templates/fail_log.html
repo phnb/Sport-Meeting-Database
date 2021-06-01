@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fail log in</title>
+</head>
+<body>
+<h>Wrong password</h>
+<form method="POST" action="/homepage">
+    {% csrf_token %}
+    <input type="submit" value="back to home page">
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
+.container{
+    display:table;
+    height:100%;
+}
+
+.head2{
+    padding-left: 100px;
+}
+
+.page1-bg{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pagebg1{
+    background-image: url("img213.png");
+}
+
+
+/* Custom page CSS
+ * Not required for template or sticky footer method.
+ * -------------------------------------------------- */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}

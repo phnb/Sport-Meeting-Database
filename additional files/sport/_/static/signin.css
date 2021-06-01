@@ -1,0 +1,69 @@
+/* stylelint-disable selector-no-qualifying-type, property-no-vendor-prefix */
+
+/*
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+*/
+
+.container{
+    display:table;
+    height:100%;
+}
+
+
+
+.head{
+    text-align: center;
+}
+
+.page1-bg{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#pagebg1{
+    background-image: url("img213.png");
+}
+
+
+
+.form-signin {
+  max-width: 330px;
+  padding: 10px 10px 10px 10px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="number"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

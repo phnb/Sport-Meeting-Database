@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>registry page</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+    <link href="/static/signin.css" rel="stylesheet">
+  </head>
+
+
+
+<body>
+    <div class="container">
+        <div class="page1-bg" id="pagebg1">
+        <form method="POST" action="/insert" class="form-signin">
+            {% csrf_token %}
+            <div class="head">
+                <h2 class="form-signin-heading">Registration</h2>
+            </div>
+
+            <div class="form-group">
+                <label>Student ID</label>
+                <input type="number", name="id" class="form-control" placeholder="e.g. 119010001" required>
+            </div>
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input type="text", name="name" class="form-control" placeholder="e.g. Clement Leung" required>
+            </div>
+
+            <div class="form-group">
+            <label>Gender</label>
+            <select name="gender" class = "form-control"  placeholder="select the gender" required>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+            <label>College</label>
+            <select name="college" class = "form-control"  placeholder="select the college" required>
+                <option value="Muse">Muse</option>
+                <option value="Harmonia">Harmonia</option>
+                <option value="Shaw">Shaw</option>
+                <option value="Diligentia">Diligentia</option>
+            </select>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-lg btn-primary btn-block">
+        </form>
+        </div>
+    </div>
+
+
+<script src="/static/bootstrap-3.4.1-dist/js/jQuery.min.js"></script>
+<script src="/static/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

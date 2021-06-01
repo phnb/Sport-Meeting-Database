@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h>Home page</h>
+
+{#跳转到player的页面#}
+{#输入：无#}
+{#输出：无#}
+<form method="POST" action="/player">
+    {% csrf_token %}
+    <input type="submit" value="player click here">
+</form>
+________________________________________________
+
+{#跳转到org的登陆页面#}
+{#输入：无#}
+{#输出：无#}
+<form method="POST" action="/org_log">
+    {% csrf_token %}
+    <input type="submit" value="organizer click here">
+</form>
+________________________________________________
+
+{#跳转到显示event_result的页面#}
+{#输入：无#}
+{#输出：event_name, event_category, event_round#}
+<form method = "POST" action = "/event_result">
+    {% csrf_token %}
+    <select name="event_name">
+    <option value="100m">100m</option>
+    <option value="400m">400m</option>
+    <option value="800m">800m</option>
+    <option value="highjump">highjump</option>
+    </select>
+    <select name="category">
+    <option value="male">male</option>
+    <option value="female">female</option>
+    </select>
+    <select name="round">
+    <option value="1">1</option>
+    <option value="2">2</option>
+        <option value="3">3</option>
+        <input type="submit" value="search">
+    </select>
+</form>
+
+________________________________________________
+{#无需跳转，用一个表单显示当前的书院排名#}
+{#输入：{data:((college_name, score, ranking)...)}#}
+{#输出：无#}
+<table border="1">
+<thead>
+<tr>
+    <th>college</th><th>score</th><th>ranking</th>
+</tr>
+</thead>
+{% for player in data %}
+    <tr>
+        {% for i in player %}
+            <td>{{ i }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

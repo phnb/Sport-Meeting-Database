@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>player page</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <![endif]-->
+    <link href="/static/signin.css" rel="stylesheet">
+  </head>
+
+<body>
+
+    <div class="container">
+        <div class="page1-bg" id="pagebg1">
+        <form method="POST" action="/signing" class="form-signin">
+            {% csrf_token %}
+            <div class="head">
+                <h2 >Select your event</h2>
+            </div>
+
+            <div class="form-group">
+                <label>Student ID</label>
+                <input type = "number" name = "id" class = "form-control" placeholder="e.g. 119010001" required autofocus>
+            </div>
+            <div class="form-group">
+                <label>Sport Events</label>
+                <select name="event_name" class = "form-control" required>
+                    <option value="100m">100m</option>
+                    <option value="400m">400m</option>
+                    <option value="800m">800m</option>
+                    <option value="highjump">highjump</option>
+                </select>
+            </div>
+            <input type="submit" value="Sign up" class="btn btn-lg btn-primary btn-block">
+        </form>
+        </div>
+    </div>
+
+
+
+
+<script src="/static/bootstrap-3.4.1-dist/js/jQuery.min.js"></script>
+<script src="/static/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
